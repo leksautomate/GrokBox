@@ -1,0 +1,81 @@
+/* GrokBox - Content Styles */
+
+/* Overlay container - top left corner */
+.grok-dl-overlay {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+*:hover>.grok-dl-overlay,
+.grok-dl-overlay:hover,
+.grok-dl-overlay.selected {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Checkbox styling */
+.grok-dl-checkbox-wrap {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  display: block;
+}
+
+.grok-dl-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.grok-dl-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+}
+
+.grok-dl-checkbox:checked+.grok-dl-checkmark {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.grok-dl-checkbox:checked+.grok-dl-checkmark::after {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 4px;
+  width: 7px;
+  height: 14px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.grok-dl-checkmark:hover {
+  border-color: #3b82f6;
+  transform: scale(1.1);
+}
+
+
+/* Touch devices */
+@media (hover: none) {
+  .grok-dl-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

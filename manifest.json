@@ -1,0 +1,50 @@
+{
+    "manifest_version": 3,
+    "name": "GrokBox",
+    "version": "1.0.0",
+    "description": "Download AI-generated videos from Grok chats",
+    "permissions": [
+        "storage",
+        "downloads",
+        "activeTab",
+        "sidePanel",
+        "scripting"
+    ],
+    "host_permissions": [
+        "*://grok.com/*",
+        "*://x.com/i/grok*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://grok.com/*",
+                "*://x.com/i/grok*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "content.css"
+            ]
+        }
+    ],
+    "side_panel": {
+        "default_path": "sidepanel.html"
+    },
+    "action": {
+        "default_title": "GrokBox",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    }
+}
