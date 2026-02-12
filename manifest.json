@@ -7,8 +7,7 @@
         "storage",
         "downloads",
         "activeTab",
-        "sidePanel",
-        "scripting"
+        "sidePanel"
     ],
     "host_permissions": [
         "*://grok.com/*",

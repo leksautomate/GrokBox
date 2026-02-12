@@ -1,0 +1,33 @@
+PLEASE COPY AND PASTE THE FOLLOWING JUSTIFICATIONS INTO THE CHROME WEB STORE FORM:
+
+--------------------------------------------------------------------------------
+storage justification:
+The extension uses the storage permission to save user preferences, specifically the list of previously downloaded video URLs. This allows the extension to display a "Downloaded" badge on videos the user has already processed, preventing duplicate downloads and improving the user experience.
+
+--------------------------------------------------------------------------------
+downloads justification:
+The core functionality of the extension is to download video files from the Grok chat interface. The downloads permission is required to trigger these downloads programmatically when the user clicks the "Download" button in the side panel or selects videos for batch downloading.
+
+--------------------------------------------------------------------------------
+activeTab justification:
+The activeTab permission is used to grant the extension temporary access to the currently active tab when the user interacts with the extension (e.g., clicking the extension icon). This allows the side panel to open and communicate with the content script on the specific tab the user is viewing, ensuring the extension operates only on the user's current context.
+
+--------------------------------------------------------------------------------
+sidePanel justification:
+The extension uses the sidePanel permission to display its main interface, which lists detected videos and provides download controls. This allows users to browse and manage video downloads alongside the main Grok chat content without obstructing the view.
+
+--------------------------------------------------------------------------------
+scripting justification:
+**ACTION REQUIRED: REMOVE THIS PERMISSION**
+Your extension does not use the `scripting` permission (it uses `content_scripts` in manifest.json instead). 
+Please remove "scripting" from the `permissions` list in your `manifest.json` file before uploading. 
+If you must keep it (not recommended), use: "Used to inject specific utility scripts into the page context." (But likely will be rejected if not actually used).
+
+--------------------------------------------------------------------------------
+Host permission justification:
+The extension requires access to https://grok.com/* and https://x.com/i/grok* to inject a content script. This script is responsible for detecting video elements on the page, adding a UI overlay for selection, and extracting video URLs to be sent to the side panel for downloading. The extension's functionality is entirely dependent on interacting with the DOM of these specific pages.
+
+--------------------------------------------------------------------------------
+Are you using remote code?
+No, I am not using Remote code.
+(The html2canvas library is bundled locally in the store assets generator, but the extension itself does not load external code).

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GrokBox - Promo Tiles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #111;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .section-label {
+            color: #888;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Common Styles */
+        .promo-container {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a0a1a 0%, #111827 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #333;
+        }
+
+        .content {
+            z-index: 2;
+            text-align: center;
+        }
+
+        .icon-wrap {
+            background: rgba(59, 130, 246, 0.15);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .icon-wrap svg {
+            color: #60a5fa;
+        }
+
+        .glow {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            filter: blur(20px);
+        }
+
+        /* -------------------------- */
+        /* SMALL TILE (440x280)       */
+        /* -------------------------- */
+        #promo-small {
+            width: 440px;
+            height: 280px;
+        }
+
+        #promo-small .icon-wrap {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            margin-bottom: 16px;
+        }
+
+        #promo-small .icon-wrap svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        #promo-small h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        #promo-small .tagline {
+            font-size: 14px;
+            color: #93c5fd;
+            max-width: 300px;
+            line-height: 1.4;
+        }
+
+        /* -------------------------- */
+        /* MARQUEE TILE (1400x560)    */
+        /* -------------------------- */
+        #promo-marquee {
+            width: 1400px;
+            height: 560px;
+        }
+
+        #promo-marquee .icon-wrap {
+            width: 140px;
+            height: 140px;
+            border-radius: 36px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 60px rgba(59, 130, 246, 0.2);
+            border-width: 3px;
+        }
+
+        #promo-marquee .icon-wrap svg {
+            width: 72px;
+            height: 72px;
+        }
+
+        #promo-marquee h1 {
+            font-size: 96px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 24px;
+            letter-spacing: -3px;
+            background: linear-gradient(to right, #fff, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #promo-marquee .tagline {
+            font-size: 32px;
+            color: #93c5fd;
+            max-width: 800px;
+            line-height: 1.5;
+            letter-spacing: -0.5px;
+        }
+
+        /* Controls */
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 12px;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SMALL TILE -->
+    <div>
+        <div class="section-label">Small Promo Tile (440 x 280)</div>
+        <div id="promo-small" class="promo-container">
+            <div class="glow" style="width:200px;height:200px;top:-50px;right:-50px;"></div>
+            <div class="glow" style="width:150px;height:150px;bottom:-30px;left:-30px;"></div>
+
+            <div class="content">
+                <div class="icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="23 7 16 12 23 17 23 7" />
+                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                    </svg>
+                </div>
+                <h1>GrokBox</h1>
+                <p class="tagline">Download AI-generated videos from Grok chats instantly</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MARQUEE TILE -->
+    <div>
+        <div class="section-label">Marquee Promo Tile (1400 x 560)</div>
+        <div id="promo-marquee" class="promo-container">
+            <div class="glow" style="width:600px;height:600px;top:-200px;right:-100px;opacity:0.8;"></div>
+            <div class="glow" style="width:500px;height:500px;bottom:-100px;left:-100px;opacity:0.6;"></div>
+
+            <div class="content">
+                <div class="icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="23 7 16 12 23 17 23 7" />
+                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                    </svg>
+                </div>
+                <h1>GrokBox</h1>
+                <p class="tagline">The easiest way to download high-quality AI videos<br>directly from your Grok
+                    conversations.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="saveImage('promo-small', 'grokbox-small-440x280', 1)">Save Small Tile</button>
+        <button class="btn" onclick="saveImage('promo-marquee', 'grokbox-marquee-1400x560', 1)">Save Marquee
+            Tile</button>
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        function saveImage(id, filename, scale) {
+            const element = document.getElementById(id);
+
+            html2canvas(element, {
+                width: element.offsetWidth,
+                height: element.offsetHeight,
+                scale: scale || 1, // Force exact scale to match requirements
+                backgroundColor: null,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = filename + '.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+        }
+    </script>
+</body>
+
+</html>
