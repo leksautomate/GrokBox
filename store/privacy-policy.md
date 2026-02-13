@@ -30,7 +30,6 @@ GrokBox stores the following data **locally on your device only** using Chrome's
 | `storage` | Store a local list of downloaded video URLs to avoid re-downloading |
 | `downloads` | Save video files to the user's computer |
 | `activeTab` | Detect and interact with videos on the currently active Grok page |
-| `scripting` | Inject the content script when needed for reliable operation |
 | `sidePanel` | Display the video selection and download interface |
 
 ## Host Permissions
